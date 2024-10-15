@@ -40,7 +40,7 @@ export default function RootLayout() {
           <Stack.Screen name="+not-found" />
         </Stack>
         {/* Global StatusBar with light content and black background */}
-        <StatusBar style="light" backgroundColor='#000000' />
+        {/* <StatusBar style="light" backgroundColor='#000000' /> */}
       </View>
     </ThemeProvider>
   );

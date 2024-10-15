@@ -1,11 +1,13 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Platform, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import images from "../constants/images";
 import CustomButton from "../components/CustomButton";
 import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const HomePage = () => {
+  const isAndroid = Platform.OS === "android";
   return (
     <View className="w-full flex flex-1 h-full bg-black">
       <Image
@@ -24,10 +26,17 @@ const HomePage = () => {
           you can focus on what matters—your training.
         </Text>
       </View>
-      <CustomButton
+      <CustomButton 
         title="Get Started"
-        onPress={() =>router.navigate('/verify-email')}
-        containerStyle="absolute bottom-12 self-center "
+        onPress={() => router.navigate("/verify-email")}
+        containerStyle={`absolute  self-center ${
+          isAndroid ? "bottom-6" : "bottom-12"
+        }`}
+      />
+      <StatusBar
+        style="light" // Change to 'dark' if your status bar content is light
+        translucent={true} // Allows the content (image) to go behind the status bar
+        backgroundColor="transparent" // Transparent background
       />
     </View>
   );
