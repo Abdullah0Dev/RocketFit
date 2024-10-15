@@ -1,9 +1,10 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { FontAwesome6 } from '@expo/vector-icons'; // Importing icon library
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { TabBarIcon } from '@/src/components/navigation/TabBarIcon';
+import { Colors } from '@/src/constants/Colors';
+import { useColorScheme } from '@/src/hooks/useColorScheme';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -26,9 +27,13 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
+          title: 'Workout', // Replacing 'Explore' with 'Workout'
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <FontAwesome6 
+              name={focused ? 'dumbbell' : 'dumbbell'} // Using dumbbell icons
+              size={24}
+              color={color} 
+            />
           ),
         }}
       />
