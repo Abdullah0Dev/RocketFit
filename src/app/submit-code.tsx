@@ -53,10 +53,12 @@ const SubmitCode = () => {
             {" "}
             By signing up, I agree to BeastFit App’s{" "}
           </Text>
-          <Text className="text-base  text-blue-400">Terms & conditions, and end-user license agreement.</Text>
+          <Text className="text-base  text-blue-400">
+            Terms & conditions, and end-user license agreement.
+          </Text>
           <CustomButton
             title="Verify Code"
-            onPress={() => router.navigate("/(tabs)/")}
+            onPress={() => console.log("Test")}
             containerStyle="self-center mt-3"
           />
         </View>
